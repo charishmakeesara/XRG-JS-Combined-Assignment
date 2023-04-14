@@ -1,5 +1,4 @@
 // Structure of the Note:
-
 const notes = [
   { id: 1, title: 'Note 1', body: 'This is note 1', author: 'John Doe' },
   { id: 2, title: 'Note 1', body: 'This is note 1', author: 'John Doe' },
@@ -9,7 +8,6 @@ const notes = [
 
 // Create Notes
 // {id: 1, title: 'Note 1', body: 'This is note 1', author: 'John Doe'}
-
 const createNote = (noteObj) => {
   const hasSeen = {};
   for (const notesValues of notesArray) {
@@ -33,5 +31,14 @@ const readnote = (id) => {
 };
 
 // Update Notes
-
+const updateNote = (note) => {
+  for (const curNote of notes) {
+    if (curNote.id == note.id) {
+      curNote.title = note.title;
+      curNote.body = note.body;
+      curNote.author = note.author;
+    }
+  }
+  return notes;
+};
 // Delete Notes
